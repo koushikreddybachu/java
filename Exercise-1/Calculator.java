@@ -37,6 +37,7 @@ class Calculator
             System.out.println("----------");
             System.out.println("Result="+z);
             System.out.println("----------");
+            sc.close();
         }
     }
 }
