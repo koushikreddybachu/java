@@ -15,7 +15,7 @@ If you have improvements or additional resources to shar, please fork the reposi
 For major changes, please open an issue first to discuss what you would like to change.
 ## Author
 
-- Name: [Koushik Reddy](https://github.com/koushikreddybachu).
+- Name: [Koushik Reddy](https://github.com/koushikreddybachu)
 - Email: [227003024@sastra.ac.in](mailto:227003024@sastra.ac.in)
 - Linkedin: [Koushik Reddy Bachu](https://www.linkedin.com/in/koushikreddybachu)
 
