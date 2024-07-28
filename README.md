@@ -20,4 +20,4 @@ For major changes, please open an issue first to discuss what you would like to 
 - Linkedin: [Koushik Reddy Bachu](https://www.linkedin.com/in/koushikreddybachu)
 
 
-![Logo](https://th.bing.com/th/id/OIP.n8pa_ux7uUyU9CJrzb1scAAAAA?rs=1&pid=ImgDetMain)
+![Logo](https://th.bing.com/th/id/R.31ccf6b00ca06840c2e131bf2bc00a40?rik=VQlxmxQmDTQnCQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fjava-png-java-icon-1600.png&ehk=Ken84AvpJ83RtHDABENcApKB7bycz9ZpTDmKurCwCPU%3d&risl=&pid=ImgRaw&r=0)
