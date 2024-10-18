@@ -28,7 +28,8 @@ class vehicalDemo extends Frame
     TextField t1=new TextField(),t2=new TextField(),t3=new TextField();
     Button b1,b2,b3;
     TextArea ta1=new TextArea();
-    vehical[] vehical=new vehical[20];
+
+    vehical[] vehical=new vehical[20];//array of vehicals
     int count1=0,i;
     String vId;
     HashMap<Integer,vehical> map=new HashMap<>();
@@ -63,34 +64,20 @@ class vehicalDemo extends Frame
         ta1.setBounds(50,270,385,300);//placing text area for output.
         ta1.setEditable(false);//can't edit text in text area.
 
-        //frame setting
-        setSize(500,600);
-        setLayout(null);
-        setVisible(true);
-
-        //handling window event
-        addWindowListener(new WindowAdapter(){
-            @Override
-            public void windowClosing(WindowEvent e)
-            {
-                dispose();
-            }
-        });
-
         //handling **add button**
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 vId=t1.getText();
-                if(vId.length()<5)
+                if(vId.length()<5)//checks id is > 4 digits
                 {
                     ta1.setText("Vehical number must be greater than 4 digits");
                     return;
                 } 
                 
                 boolean idExist=false;
-                for(int j=0;j<count1;j++)
+                for(int j=0;j<count1;j++)//duplicate vehicle id not allowed
                 if(Integer.valueOf(vehical[j].vId).equals(Integer.parseInt(vId)))
                 {
                     idExist=true;
@@ -102,7 +89,7 @@ class vehicalDemo extends Frame
                     return;
                 }
                 vehical[count1]=new vehical(Integer.parseInt(vId),t2.getText(),t3.getText());
-                map.put(vehical[count1].vId,vehical[count1]);
+                map.put(vehical[count1].vId,vehical[count1]);//pushing to hashmap
                 count1++;
                 t1.setText("");
                 t2.setText("");
@@ -124,9 +111,9 @@ class vehicalDemo extends Frame
                     return;
                 }
 
-                TreeMap<Integer,vehical> treemap=new TreeMap<>(map);
+                TreeMap<Integer,vehical> treemap=new TreeMap<>(map);//to get ascending order.
 
-                for(Map.Entry<Integer,vehical> entry:treemap.entrySet())
+                for(Map.Entry<Integer,vehical> entry:treemap.entrySet())//prints data in tree.
                     ta1.append(entry.getValue().toString()+"\n\n");
 
                 
@@ -139,29 +126,39 @@ class vehicalDemo extends Frame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                if(count1==0)
+                if(count1==0)//checks weather map is empty.
                 {
                     ta1.setText("No details added to search");
                     t2.setText("");
                     return;
                 }
-                if(t2.getText().equals(""))
+                if(t2.getText().equals(""))//checks weather fiels is empty.
                 {
                     ta1.setText("Enter brand Name to search");
                     t2.setText("");
                     return;
                 }
                 boolean found=false;
+                //search for the brand in our data
                 for(i=0;i<count1;i++)
                     if(vehical[i].vBrand.equals(t2.getText()))
                     {
                         ta1.setText(vehical[i].toString());
                         found=true;
                     }
-                if(!found)
+                if(!found)//
                     ta1.setText("No data with such brand name");
                 t2.setText("");
 
+            }
+        });
+
+        //handling window event
+        addWindowListener(new WindowAdapter(){
+            @Override
+            public void windowClosing(WindowEvent e)
+            {
+                dispose();
             }
         });
 
@@ -170,6 +167,11 @@ class vehicalDemo extends Frame
         add(t1);add(t2);add(t3);
         add(b1);add(b2);add(b3);
         add(ta1);
+
+        //frame setting
+        setSize(500,600);
+        setLayout(null);
+        setVisible(true);
     }
     public static void main(String[] args)
     {
