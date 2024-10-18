@@ -69,6 +69,12 @@ class vehicalDemo extends Frame
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                //checking weather all fields are entered
+                if(t1.getText().equals("") || t2.getText().equals("") || t3.getText().equals(""))
+                {
+                    ta1.setText("Please,fill all details of vehical");
+                    return;
+                }
                 vId=t1.getText();
                 if(vId.length()<5)//checks id is > 4 digits
                 {
